@@ -1,5 +1,5 @@
 terraform {
-   backend "azurerm" {
+  backend "azurerm" {
     resource_group_name  = "TaskBoard-RG"
     storage_account_name = "tfstateneycho"
     container_name       = "tfstate"
@@ -69,12 +69,12 @@ resource "azurerm_mssql_server" "main" {
 }
 
 resource "azurerm_mssql_database" "main" {
-  name           = var.sql_database_name
-  server_id      = azurerm_mssql_server.main.id
-  collation      = "SQL_Latin1_General_CP1_CI_AS"
-  license_type   = "LicenseIncluded"
-  sku_name = "Basic"
-  zone_redundant = false
+  name                 = var.sql_database_name
+  server_id            = azurerm_mssql_server.main.id
+  collation            = "SQL_Latin1_General_CP1_CI_AS"
+  license_type         = "LicenseIncluded"
+  sku_name             = "Basic"
+  zone_redundant       = false
   storage_account_type = "Local"
 }
 
